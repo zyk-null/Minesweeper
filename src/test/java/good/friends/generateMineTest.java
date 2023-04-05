@@ -12,8 +12,6 @@ public class generateMineTest {
     public void testGenerateMine() {
         Minesweeper ms=new Minesweeper();
         try {
-            //需要先调用init方法，初始化show，mine，count
-            Method method1=ms.getClass().getDeclaredMethod("init");
             //使用反射机制，调用私有方法
             Method method=ms.getClass().getDeclaredMethod("generateMine");
             method.setAccessible(true);

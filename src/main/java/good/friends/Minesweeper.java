@@ -29,7 +29,8 @@ public class Minesweeper{
     private int[][] count=new int[ROWS][COLS];//用来存放周围雷的数量
     private int flagNum=0;//插旗数
     private int hitNum=0;//标记正确的雷数
-    private int x,y;//输入的行和列
+    private int x;//输入的行和列
+    private int y;
     private char op;//输入的操作符
     private Scanner input=new Scanner(System.in);
 
@@ -75,19 +76,17 @@ public class Minesweeper{
         }
         showMine();//作弊，显示雷的位置
     }
-    //计算周围雷的数量
+    //计算周围雷的数量，注意边界
     private void countMine(){
+        //计算周围8个格子的雷的数量
+        int dx[]={-1,-1,-1,0,0,1,1,1};
+        int dy[]={-1,0,1,-1,1,-1,0,1};
         for(int i=1;i<ROWS-1;i++){
             for(int j=1;j<COLS-1;j++){
-                if(mine[i][j]==1){
-                    count[i-1][j-1]++;
-                    count[i-1][j]++;
-                    count[i-1][j+1]++;
-                    count[i][j-1]++;
-                    count[i][j+1]++;
-                    count[i+1][j-1]++;
-                    count[i+1][j]++;
-                    count[i+1][j+1]++;
+                for(int k=0;k<8;k++){
+                    if(mine[i+dx[k]][j+dy[k]]==1){
+                        count[i][j]++;
+                    }
                 }
             }
         }
