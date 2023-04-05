@@ -23,7 +23,7 @@ public class Minesweeper{
     final private int COL=9;//游戏界面的列数
     final private int ROWS=ROW+2;//用来存放雷的数组的行数,比界面行数大2,因为要在第一行和最后一行加一行,用来存放边界
     final private int COLS=COL+2;//用来存放雷的数组的列数,比界面列数大2,因为要在第一列和最后一列加一列,用来存放边界
-    final private int MINE_NUM=3;//雷的数量
+    final private int MINE_NUM=9;//雷的数量
     private char[][] show=new char[ROWS][COLS];//用来显示雷的数组，*表示未点开，?表示插旗，数字表示周围雷的数量
     private int[][] mine=new int[ROWS][COLS];//用来存放雷的数组,0表示没有雷，1表示有雷
     private int[][] count=new int[ROWS][COLS];//用来存放周围雷的数量
