@@ -23,6 +23,8 @@ public class isFormatTest {
         assertEquals(false,method.invoke(ms,"o 1"));
         assertEquals(false,method.invoke(ms,"o 1 1 1"));
         assertEquals(false,method.invoke(ms,"o -1 -1"));
+        assertEquals(false,method.invoke(ms,"p 1 1"));
+        assertEquals(false,method.invoke(ms,""));
 
     }
 }
